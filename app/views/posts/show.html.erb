@@ -1,0 +1,15 @@
+<% if notice or alert %>
+  <p style="color: green"><%= notice %></p>
+  <p style="color: red"><%= alert %></p>
+<% end %>
+
+<%= render @post %>
+
+<div>
+  <%= link_to "Back to Posts", posts_path %>
+
+  <% if is_owner?(@post) %>
+    <%= link_to "Edit", edit_post_path(@post) %> |
+    <%= button_to "Destroy", @post, method: :delete %>
+  <% end %>
+</div>

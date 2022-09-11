@@ -1,0 +1,16 @@
+<div id="<%= dom_id post %>">
+  <%# Header %>
+  <strong><a href="<%= post.website %>" target="_blank"><%= post.name %></a></strong>
+  <%# Content %>
+  <p style="margin:0">
+    <%= post.message %>
+  </p>
+  <%# Footer %>
+  <span>
+    <small><%= time_ago_in_words(post.created_at) %> ago</small>
+    <% if is_owner?(post) %>
+      -
+      <%= link_to "<small>Edit</small>".html_safe, edit_post_path(post) %>
+    <% end %>
+  </span>
+</div>

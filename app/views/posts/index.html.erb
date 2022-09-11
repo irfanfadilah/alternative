@@ -1,0 +1,17 @@
+<% if notice or alert %>
+  <p style="color: green"><%= notice %></p>
+  <p style="color: red"><%= alert %></p>
+<% end %>
+
+<div style="display:flex;justify-content:space-between">
+  <h1>Posts</h1>
+  <p><%= link_to "New Post", new_post_path, role: "button" %></p>
+</div>
+
+<table id="posts" role="grid">
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr><td><%= render post %></td></tr>
+    <% end %>
+  </tbody>
+</table>
