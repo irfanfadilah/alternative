@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: alternative_production
-  username: alternative
-  password: <%= ENV["ALTERNATIVE_DATABASE_PASSWORD"] %>
+  url: <%= ENV["ALTERNATIVE_DATABASE_URL"] %>
